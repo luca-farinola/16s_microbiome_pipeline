@@ -1,0 +1,13 @@
+FROM rocker/tidyverse:4.4.3
+
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN R --slave -e "install.packages('BiocManager', repos='http://cran.r-project.org')"
+RUN R --slave -e "BiocManager::install(c('dada2', 'Biostrings'))"
+RUN R --slave -e "install.packages(c('dplyr', 'tidyr', 'tibble'), repos='http://cran.r-project.org')"
+
+WORKDIR /work
+ENTRYPOINT ["Rscript"]

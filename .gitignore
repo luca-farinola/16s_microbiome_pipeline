@@ -1,0 +1,111 @@
+# Nextflow
+.nextflow/
+.nextflow.log*
+work/
+results/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.DS_Store
+
+# Analysis outputs (optional - uncomment if you want to track)
+# 02.Analysis/
+
+# Singularity cache
+.singularity/
+*.simg
+*.sif
+
+# SLURM logs
+slurm-*.out
+slurm-*.err
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# R
+.Rhistory
+.RData
+.Rapp.history
+*.Rproj
+.Rproj.user/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*#
+
+# Docker/Singularity
+Dockerfile
+docker-compose.yml
+
+# Databases (large files)
+databases/
+*.arb
+*.arb.gz
+
+# Temporary analysis
+.test_run/
+debug_*
+
+# System files
+.DStore
+Thumbs.db
+
+# Node modules (if any JS tools used)
+node_modules/
+
+# Cache
+.cache/
+.tmp/
+# Cache
+.cache/
+.tmp/
+
+# Large sequence files
+*.fasta
+*.fa
+*.fastq
+*.fq
+*.bam
+*.sam
+*.fasta.gz
+*.fa.gz
+*.fastq.gz
+*.fq.gz
+*.bam.bai
+*.sam.gz
+
+# Sensitive config
+nextflow.config.local
+*.secrets
+
+# Sample data
+samples.csv
+metadata.csv
+01.RawData/
+02.Analysis/
+microbiome_output
