@@ -92,72 +92,6 @@ nextflow run main_16s.nf \
     --sample_csv  samples.csv\ 
 ```
 
-## Output Structure
-
-```
-02.Analysis/
-├── 01.FastQC/
-│   ├── sample001_R1_fastqc.html
-│   ├── sample001_R2_fastqc.html
-│   └── sample001_*_fastqc.zip
-│
-├── 02.CUTADAPTTrimm/
-│   ├── sample001_R1_trimmed.fastq.gz
-│   ├── sample001_R2_trimmed.fastq.gz
-│   └── sample001.trim.log
-│
-├── 03.DADA2Trimm/
-│   ├── sample001_1.filt.fastq.gz
-│   ├── sample001_2.filt.fastq.gz
-│   └── sample001.filter_stats.tsv
-│
-├── 04.DADA2ErrorModel/
-│   ├── sample001.errF.rds           ← Error model (R1)
-│   ├── sample001.errR.rds           ← Error model (R2)
-│   ├── sample001.errF.pdf           ← Error profile plot
-│   ├── sample001.errR.pdf
-│   ├── sample001.errF.svg
-│   └── sample001.errR.svg
-│
-├── 05.DADA2Denoise/
-│   ├── sample001.dadaF.rds          ← Denoised reads (R1)
-│   ├── sample001.dadaR.rds          ← Denoised reads (R2)
-│   └── sample001.dada.log
-│
-├── 06.DADA2Merge/
-│   └── sample001.merged.rds         ← Merged paired-end reads
-│
-├── 07.ASVTable/
-│   ├── asvtable.csv                 ← **ASV abundance (rows=samples, cols=ASVs)**
-│   ├── asvtable.rds                 ← R format
-│   └── ASVs.fasta                   ← Representative sequences
-│
-├── 08.MultiQC_Report/
-│   ├── multiqc_report.html          ← **Aggregated QC report**
-│   └── multiqc_data/
-│
-├── 09.Taxonomy_kraken/
-│   ├── kraken2_output.txt           ← Per-ASV Kraken2 classifications
-│   └── kraken2_report.txt           ← Kraken2 summary report
-│
-├── 09.Taxonomy_dada2/
-│   ├── dada2_taxonomy/
-│   │   ├── tax_assignment.rds       ← R format taxonomy object
-│   │   └── tax_assignment.csv       ← Taxonomy table (Kingdom→Species)
-│
-├── 10.Aboundance_table_kraken/
-│   └── kraken2_taxonomy.txt         ← **ASVs + Kraken2 taxonomy + counts**
-│
-├── 10.Aboundance_table_dada2/
-│   ├── asv_with_dada2_taxonomy.csv  ← **ASVs + DADA2 taxonomy + counts**
-│   ├── dada2_abundance_by_rank.txt  ← Aggregated by taxonomic rank
-│   └── dada2_tax_summary.txt        ← Summary statistics
-│
-├── pipeline_report.html             ← Nextflow execution report
-├── timeline.html                    ← Task execution timeline
-└── trace.tsv                        ← Detailed task metrics
-```
-
 ## Key Output Files
 
 ### 1. ASV Abundance Table (`07.ASVTable/asvtable.csv`)
@@ -215,3 +149,4 @@ these lines expose internal server paths:
 
 create docker immage that people can pull instead of sing seqera 
 make a flag so that you could choose wehter to use kraken or DADA2 for taxonomy 
+
